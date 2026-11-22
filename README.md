@@ -192,11 +192,11 @@ pip install -r requirements.txt
 ```
 
 ### 3. Environment Configuration
-Copy `.env.example` to `.env` and fill in your credentials:
+Create a `.env` file in the root directory with your credentials:
 ```bash
-cp .env.example .env
+touch .env
 ```
-Edit `.env`:
+Populate `.env` with:
 ```ini
 WAQI_API_TOKEN=your_waqi_api_token
 OPENAQ_API_KEY=your_openaq_key
@@ -271,8 +271,7 @@ infix-airlens/
 │   └── sync_live_data.py               # Live WAQI & weather extractor + Databricks sync
 ├── tests/
 │   └── test_api_keys.py                # Verification tests for external API endpoints
-├── .env.example                        # Sanitized configuration template
-├── .gitignore                          # Protected exclusions (.env, data_dumps, pycache)
+├── .gitignore                          # Protected exclusions (.env, .env.example, data_dumps, pycache)
 ├── requirements.txt                    # Project Python dependencies
 └── README.md                           # Project documentation
 ```
