@@ -1,0 +1,37 @@
+pollutant,unit,c_low,c_high,i_low,i_high,category
+PM2.5,ug/m3,0,30,0,50,Good
+PM2.5,ug/m3,31,60,51,100,Satisfactory
+PM2.5,ug/m3,61,90,101,200,Moderate
+PM2.5,ug/m3,91,120,201,300,Poor
+PM2.5,ug/m3,121,250,301,400,Very Poor
+PM2.5,ug/m3,251,1500,401,500,Severe
+PM10,ug/m3,0,50,0,50,Good
+PM10,ug/m3,51,100,51,100,Satisfactory
+PM10,ug/m3,101,250,101,200,Moderate
+PM10,ug/m3,251,350,201,300,Poor
+PM10,ug/m3,351,430,301,400,Very Poor
+PM10,ug/m3,431,2000,401,500,Severe
+NO2,ug/m3,0,40,0,50,Good
+NO2,ug/m3,41,80,51,100,Satisfactory
+NO2,ug/m3,81,180,101,200,Moderate
+NO2,ug/m3,181,280,201,300,Poor
+NO2,ug/m3,281,400,301,400,Very Poor
+NO2,ug/m3,401,1000,401,500,Severe
+SO2,ug/m3,0,40,0,50,Good
+SO2,ug/m3,41,80,51,100,Satisfactory
+SO2,ug/m3,81,380,101,200,Moderate
+SO2,ug/m3,381,800,201,300,Poor
+SO2,ug/m3,801,1600,301,400,Very Poor
+SO2,ug/m3,1601,3000,401,500,Severe
+CO,mg/m3,0.0,1.0,0,50,Good
+CO,mg/m3,1.1,2.0,51,100,Satisfactory
+CO,mg/m3,2.1,10.0,101,200,Moderate
+CO,mg/m3,10.1,17.0,201,300,Poor
+CO,mg/m3,17.1,34.0,301,400,Very Poor
+CO,mg/m3,34.1,50.0,401,500,Severe
+O3,ug/m3,0,50,0,50,Good
+O3,ug/m3,51,100,51,100,Satisfactory
+O3,ug/m3,101,168,101,200,Moderate
+O3,ug/m3,169,208,201,300,Poor
+O3,ug/m3,209,748,301,400,Very Poor
+O3,ug/m3,749,1500,401,500,Severe

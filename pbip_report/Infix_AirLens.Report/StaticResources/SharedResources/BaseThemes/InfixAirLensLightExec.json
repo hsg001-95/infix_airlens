@@ -1,0 +1,91 @@
+{
+  "name": "InfixAirLensLightExec",
+  "dataColors": [
+    "#0284C7",
+    "#E11D48",
+    "#EA580C",
+    "#D97706",
+    "#059669",
+    "#7C3AED",
+    "#0D9488",
+    "#475569"
+  ],
+  "background": "#F4F7FB",
+  "foreground": "#0F172A",
+  "tableAccent": "#0284C7",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#E2E8F0"
+              }
+            },
+            "radius": 12
+          }
+        ],
+        "dropShadow": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#94A3B8"
+              }
+            },
+            "position": "Outer",
+            "preset": "BottomRight"
+          }
+        ],
+        "title": [
+          {
+            "show": true,
+            "fontColor": {
+              "solid": {
+                "color": "#0F172A"
+              }
+            },
+            "fontSize": 11,
+            "fontFamily": "Segoe UI Semibold"
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#F4F7FB"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "outspace": [
+          {
+            "color": {
+              "solid": {
+                "color": "#E2E8F0"
+              }
+            },
+            "transparency": 0
+          }
+        ]
+      }
+    }
+  }
+}

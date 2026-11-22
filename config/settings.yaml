@@ -1,0 +1,21 @@
+project:
+  name: Infix AirLens
+  catalog: airlens
+  volume_root: /Volumes/airlens/raw/landing_zone
+
+aqi_rules:
+  min_pollutants_required: 3
+  require_pm: true
+  alert_thresholds:
+    high: 301      # Very Poor
+    critical: 401  # Severe
+
+hotspot_weights:
+  mean_pm25_norm: 0.40
+  poor_plus_days_share: 0.30
+  p95_aqi_norm: 0.30
+
+dq_bounds:
+  india_lat: [6.5, 37.5]
+  india_lon: [68.0, 97.5]
+  stuck_sensor_hours: 24

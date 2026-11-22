@@ -1,0 +1,119 @@
+{
+  "config": "{\"version\": \"5.51\", \"themeCollection\": {\"baseTheme\": {\"name\": \"InfixAirLensLightExec\", \"version\": \"5.51\", \"type\": 2}}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "name": "SharedResources",
+        "type": 2,
+        "items": [
+          {
+            "type": 202,
+            "path": "BaseThemes/InfixAirLensLightExec.json",
+            "name": "InfixAirLensLightExec"
+          }
+        ]
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "ReportSection1",
+      "displayName": "Executive Overview",
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 15,
+          "z": 1000,
+          "width": 620,
+          "height": 75,
+          "config": "{\"name\": \"slicer_city\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 15, \"z\": 1000, \"width\": 620, \"height\": 75}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"gold_pollution_hotspot_ranking.city\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Select City'\"}}}}}]}}}"
+        },
+        {
+          "x": 660,
+          "y": 15,
+          "z": 1000,
+          "width": 190,
+          "height": 95,
+          "config": "{\"name\": \"kpi_aqi\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 660, \"y\": 15, \"z\": 1000, \"width\": 190, \"height\": 95}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"Avg(gold_city_daily_aqi.daily_aqi)\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Mean Daily AQI'\"}}}}}]}}}"
+        },
+        {
+          "x": 865,
+          "y": 15,
+          "z": 1000,
+          "width": 190,
+          "height": 95,
+          "config": "{\"name\": \"kpi_hotspot\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 865, \"y\": 15, \"z\": 1000, \"width\": 190, \"height\": 95}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"Max(gold_pollution_hotspot_ranking.hotspot_index)\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Peak Hotspot Index'\"}}}}}]}}}"
+        },
+        {
+          "x": 1070,
+          "y": 15,
+          "z": 1000,
+          "width": 190,
+          "height": 95,
+          "config": "{\"name\": \"kpi_alerts\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1070, \"y\": 15, \"z\": 1000, \"width\": 190, \"height\": 95}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"Count(gold_aqi_alerts.alert_message)\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'High/Critical Alerts'\"}}}}}]}}}"
+        },
+        {
+          "x": 20,
+          "y": 125,
+          "z": 1000,
+          "width": 580,
+          "height": 340,
+          "config": "{\"name\": \"map_3d\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 125, \"z\": 1000, \"width\": 580, \"height\": 340}}], \"singleVisual\": {\"visualType\": \"azureMap\", \"projections\": {\"Category\": [{\"queryRef\": \"gold_pollution_hotspot_ranking.city\"}], \"Size\": [{\"queryRef\": \"Sum(gold_pollution_hotspot_ranking.hotspot_index)\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'3D City Hotspot Severity Map'\"}}}}}]}}}"
+        },
+        {
+          "x": 615,
+          "y": 125,
+          "z": 1000,
+          "width": 645,
+          "height": 340,
+          "config": "{\"name\": \"trend_7d\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 615, \"y\": 125, \"z\": 1000, \"width\": 645, \"height\": 340}}], \"singleVisual\": {\"visualType\": \"lineChart\", \"projections\": {\"Category\": [{\"queryRef\": \"gold_city_daily_aqi.date\"}], \"Y\": [{\"queryRef\": \"Avg(gold_city_daily_aqi.rolling_7d_aqi)\"}], \"Series\": [{\"queryRef\": \"gold_pollution_hotspot_ranking.city\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'7-Day Rolling AQI Trajectory'\"}}}}}]}}}"
+        },
+        {
+          "x": 20,
+          "y": 480,
+          "z": 1000,
+          "width": 1240,
+          "height": 220,
+          "config": "{\"name\": \"alerts_tbl\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 480, \"z\": 1000, \"width\": 1240, \"height\": 220}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"gold_aqi_alerts.date\"}, {\"queryRef\": \"gold_aqi_alerts.city\"}, {\"queryRef\": \"gold_aqi_alerts.daily_aqi\"}, {\"queryRef\": \"gold_aqi_alerts.aqi_category\"}, {\"queryRef\": \"gold_aqi_alerts.dominant_pollutant\"}, {\"queryRef\": \"gold_aqi_alerts.severity\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Active Severe & Very Poor AQI Threshold Breaches'\"}}}}}]}}}"
+        }
+      ],
+      "width": 1280,
+      "height": 720,
+      "displayOption": 1
+    },
+    {
+      "name": "ReportSection2",
+      "displayName": "Drivers & 7-Day Forecast",
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 20,
+          "z": 1000,
+          "width": 680,
+          "height": 320,
+          "config": "{\"name\": \"fire_lag\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 20, \"z\": 1000, \"width\": 680, \"height\": 320}}], \"singleVisual\": {\"visualType\": \"lineClusteredColumnComboChart\", \"projections\": {\"Category\": [{\"queryRef\": \"gold_fire_aqi_impact.fire_date\"}], \"ColumnY\": [{\"queryRef\": \"Sum(gold_fire_aqi_impact.total_frp_mw)\"}], \"LineY\": [{\"queryRef\": \"Avg(gold_fire_aqi_impact.ncr_aqi_lag1)\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Punjab-Haryana Fire FRP (MW) vs Lag-1 Delhi NCR AQI'\"}}}}}]}}}"
+        },
+        {
+          "x": 715,
+          "y": 20,
+          "z": 1000,
+          "width": 545,
+          "height": 320,
+          "config": "{\"name\": \"wind_corr\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 715, \"y\": 20, \"z\": 1000, \"width\": 545, \"height\": 320}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"gold_weather_aqi_correlation.city\"}], \"Y\": [{\"queryRef\": \"Avg(gold_weather_aqi_correlation.corr_wind_pm25)\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Wind Speed Dispersion Correlation (corr_wind_pm25)'\"}}}}}]}}}"
+        },
+        {
+          "x": 20,
+          "y": 355,
+          "z": 1000,
+          "width": 1240,
+          "height": 345,
+          "config": "{\"name\": \"forecast_line\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 355, \"z\": 1000, \"width\": 1240, \"height\": 345}}], \"singleVisual\": {\"visualType\": \"lineChart\", \"projections\": {\"Category\": [{\"queryRef\": \"gold_aqi_forecast.forecast_date\"}], \"Y\": [{\"queryRef\": \"Avg(gold_aqi_forecast.predicted_aqi)\"}, {\"queryRef\": \"Avg(gold_aqi_forecast.ci80_upper)\"}, {\"queryRef\": \"Avg(gold_aqi_forecast.ci80_lower)\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'7-Day Recursive AQI Forecast with 80% Confidence Interval'\"}}}}}]}}}"
+        }
+      ],
+      "width": 1280,
+      "height": 720,
+      "displayOption": 1
+    }
+  ]
+}
