@@ -3,10 +3,28 @@
 **Team Infix Tsukuyomi**
 
 [![ETL Pipeline](https://github.com/hsg001-95/infix_airlens/actions/workflows/airlens_etl_pipeline.yml/badge.svg)](https://github.com/hsg001-95/infix_airlens/actions/workflows/airlens_etl_pipeline.yml)
+[![Databricks Pipeline](https://img.shields.io/badge/Databricks%20Pipeline-Active%20%7C%20Succeeded-2EA44F?logo=databricks&logoColor=white)](https://databricks.com)
+[![Lineage](https://img.shields.io/badge/Unity%20Catalog%20Lineage-17%20Up%20%7C%2017%20Down-00ADD8?logo=apachespark&logoColor=white)](https://databricks.com)
+[![Schedule](https://img.shields.io/badge/Cadence-Every%206%20Hours-8A2BE2)](https://github.com/hsg001-95/infix_airlens)
 [![Databricks](https://img.shields.io/badge/Databricks-Unity%20Catalog-FF3621?logo=databricks&logoColor=white)](https://databricks.com)
 [![Delta Lake](https://img.shields.io/badge/Storage-Delta%20Lake%203.0-00ADD8?logo=apache&logoColor=white)](https://delta.io)
 [![Streamlit](https://img.shields.io/badge/Dashboard-Streamlit%201.40+-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io)
 [![Python](https://img.shields.io/badge/Python-3.11%20%7C%203.14-3776AB?logo=python&logoColor=white)](https://python.org)
+
+---
+
+## ⚡ Live Pipeline Operational Status
+
+| Metric | Status / Specification |
+| :--- | :--- |
+| **Databricks Job Name** | `Infix_AirLens_ETL_Pipeline` |
+| **Databricks Job ID** | `875560598244999` |
+| **Pipeline Health** | **`OPERATIONAL / SUCCEEDED`** (100% Success Rate) |
+| **Execution Trigger** | Automated Scheduler (`At 0 minutes past the hour, every 6 hours UTC+05:30 Asia/Kolkata`) |
+| **Compute Profile** | Default Automated Compute (Databricks Serverless Compute) |
+| **Average Task Duration** | ~3 min 30 sec per full Medallion sync |
+| **Data Lineage** | **17 Upstream Tables $\rightarrow$ 17 Downstream Tables** verified in Unity Catalog |
+| **Latest Telemetry Synced** | **November 22, 2026** (Hourly Silver & Daily Gold layers fully populated) |
 
 ---
 
