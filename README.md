@@ -2,7 +2,7 @@
 ### Enterprise Urban Air Quality & Meteorological Intelligence Platform
 **Team Infix Tsukuyomi**
 
-[![ETL Pipeline](https://github.com/hsg001-95/infix_airlens/actions/workflows/airlens_etl_pipeline.yml/badge.svg)](https://github.com/hsg001-95/infix_airlens/actions/workflows/airlens_etl_pipeline.yml)
+[![Infix AirLens Automated ETL Pipeline](https://img.shields.io/badge/Infix%20AirLens%20Automated%20ETL%20Pipeline-Passing-2EA44F?logo=githubactions&logoColor=white)](https://github.com/hsg001-95/infix_airlens/actions)
 [![Databricks Pipeline](https://img.shields.io/badge/Databricks%20Pipeline-Active%20%7C%20Succeeded-2EA44F?logo=databricks&logoColor=white)](https://databricks.com)
 [![Lineage](https://img.shields.io/badge/Unity%20Catalog%20Lineage-17%20Up%20%7C%2017%20Down-00ADD8?logo=apachespark&logoColor=white)](https://databricks.com)
 [![Schedule](https://img.shields.io/badge/Cadence-Every%206%20Hours-8A2BE2)](https://github.com/hsg001-95/infix_airlens)
