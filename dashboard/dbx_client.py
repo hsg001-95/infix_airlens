@@ -1,5 +1,6 @@
 import os
 import time
+from urllib.parse import urlparse
 from datetime import datetime
 import pandas as pd
 import streamlit as st
@@ -8,7 +9,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-HOST = os.getenv("DATABRICKS_SERVER_HOSTNAME", "dbc-f5e4acdd-3f34.cloud.databricks.com")
+raw_host = os.getenv("DATABRICKS_SERVER_HOSTNAME", "dbc-f5e4acdd-3f34.cloud.databricks.com")
+HOST = urlparse(raw_host).hostname if "://" in raw_host else raw_host.split("/")[0]
 HTTP_PATH = os.getenv("DATABRICKS_HTTP_PATH", "")
 TOKEN = os.getenv("DATABRICKS_TOKEN", "")
 
@@ -54,14 +56,6 @@ def fetch_airlens_gold_data() -> dict:
         backtest = pd.read_sql(
             "SELECT * FROM airlens.ops.forecast_backtest_metrics ORDER BY rmse", conn
         )
-        hourly_sample = pd.read_sql(
-            """
-            SELECT *
-            FROM airlens.silver.silver_city_hourly_aqi
-            WHERE CAST(hour_ts AS DATE) >= DATE_SUB(CURRENT_DATE(), 14)
-            """,
-            conn,
-        )
 
     latency_ms = round((time.perf_counter() - t0) * 1000)
     return {
@@ -73,13 +67,12 @@ def fetch_airlens_gold_data() -> dict:
         "alerts": alerts,
         "dq_audit": dq_audit,
         "backtest": backtest,
-        "hourly": hourly_sample,
         "meta": {
             "host": HOST,
             "warehouse_path": HTTP_PATH,
             "dbr_version": meta_row[2] if meta_row else "Serverless SQL",
             "latency_ms": latency_ms,
             "synced_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S IST"),
-            "total_rows": sum(len(df) for df in [hotspots, daily, fire, weather, forecast, alerts, hourly_sample]),
+            "total_rows": sum(len(df) for df in [hotspots, daily, fire, weather, forecast, alerts]),
         },
     }

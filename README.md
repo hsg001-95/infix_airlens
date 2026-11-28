@@ -59,7 +59,6 @@ flowchart TD
         DQ{"Data Quality Gates<br/>(DQ-01 to DQ-11)"}
         S_QUAR["airlens.silver.silver_quarantine"]
         S_AQI["airlens.silver.silver_aqi_readings"]
-        S_HOURLY["airlens.silver.silver_city_hourly_aqi"]
         S_WX["airlens.silver.silver_weather_hourly"]
         S_FIRE["airlens.silver.silver_fire_events"]
     end
@@ -82,11 +81,10 @@ flowchart TD
     BronzeLayer --> DQ
     DQ -->|Failed Schema/Range| S_QUAR
     DQ -->|Passed Validations| S_AQI
-    S_AQI --> S_HOURLY
+    S_AQI --> G_DAILY
     BronzeLayer --> S_WX
     BronzeLayer --> S_FIRE
 
-    S_HOURLY --> G_DAILY
     G_DAILY --> G_RANK
     G_DAILY --> G_ALERTS
     S_FIRE & G_DAILY --> G_FIRE
@@ -126,7 +124,6 @@ AirLens continuously tracks 8 major metropolitan air sheds across the Indian sub
 
 ### 2. Silver (Conformed & Governed)
 - **`airlens.silver.silver_aqi_readings`**: Station-level atomic pollutant measurements (495,000+ rows) mapped to UTC & IST timestamps.
-- **`airlens.silver.silver_city_hourly_aqi`**: City-wide hourly means for criteria pollutants (`PM2.5`, `PM10`, `NO2`, `SO2`, `CO`, `O3`).
 - **`airlens.silver.silver_weather_hourly`**: Surface temperature, relative humidity, wind speed (10m), wind direction, and surface pressure.
 - **`airlens.silver.silver_fire_events`**: Filtered satellite agricultural fire detections across Punjab & Haryana bounding box.
 - **`airlens.silver.silver_quarantine`**: Quarantined telemetry failing schema validations, out-of-range sensor bounds, or null identifiers.
