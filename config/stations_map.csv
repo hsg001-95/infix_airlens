@@ -2,11 +2,27 @@ station_id,station_name,city,state,latitude,longitude,source_system,is_active
 DEL_ANAND_VIHAR,Anand Vihar,Delhi,Delhi,28.6468,77.3160,WAQI/CPCB,true
 DEL_ITO,ITO,Delhi,Delhi,28.6286,77.2410,WAQI/CPCB,true
 DEL_RK_PURAM,R K Puram,Delhi,Delhi,28.5633,77.1869,WAQI/CPCB,true
-DEL_PUNJABI_BAGH,Punjabi Bagh,Delhi,Delhi,28.6740,77.1310,WAQI/CPCB,true
 GGN_SECTOR_51,Sector 51 Gurugram,Gurugram,Haryana,28.4227,77.0667,WAQI/CPCB,true
 NOI_SECTOR_62,Sector 62 Noida,Noida,Uttar Pradesh,28.6245,77.3577,WAQI/CPCB,true
+GZB_VASUNDHARA,Vasundhara Ghaziabad,Ghaziabad,Uttar Pradesh,28.6603,77.3573,WAQI/CPCB,true
+FBD_SECTOR_16A,Sector 16A Faridabad,Faridabad,Haryana,28.4088,77.3099,WAQI/CPCB,true
+LKO_LALBAGH,Lalbagh Lucknow,Lucknow,Uttar Pradesh,26.8459,80.9365,WAQI/CPCB,true
+KNU_NEHRU_NAGAR,Nehru Nagar Kanpur,Kanpur,Uttar Pradesh,26.4703,80.3230,WAQI/CPCB,true
+VNS_ARDHALI_BAZAR,Ardhali Bazar Varanasi,Varanasi,Uttar Pradesh,25.3506,82.9083,WAQI/CPCB,true
+PAT_IGSC,IGSC Planetarium Patna,Patna,Bihar,25.6093,85.1235,WAQI/CPCB,true
+CHD_SECTOR_25,Sector 25 Chandigarh,Chandigarh,Chandigarh,30.7490,76.7571,WAQI/CPCB,true
+ASR_GOLDEN_TEMPLE,Golden Temple Amritsar,Amritsar,Punjab,31.6200,74.8765,WAQI/CPCB,true
+JAI_POLICE_COMM,Police Commissionerate Jaipur,Jaipur,Rajasthan,26.9162,75.7995,WAQI/CPCB,true
 MUM_BANDRA,Bandra Kurla Complex,Mumbai,Maharashtra,19.0659,72.8687,WAQI/CPCB,true
-BLR_BTM,BTM Layout,Bengaluru,Karnataka,12.9166,77.6101,WAQI/CPCB,true
-KOL_VICTORIA,Victoria Memorial,Kolkata,West Bengal,22.5448,88.3426,WAQI/CPCB,true
-HYD_SANATHNAGAR,Sanathnagar,Hyderabad,Telangana,17.4569,78.4439,WAQI/CPCB,true
-CHN_ALANDUR,Alandur Bus Depot,Chennai,Tamil Nadu,12.9975,80.2006,WAQI/CPCB,true
+PUN_KARVE_ROAD,Karve Road Pune,Pune,Maharashtra,18.5018,73.8117,WAQI/CPCB,true
+NGP_CIVIL_LINES,Civil Lines Nagpur,Nagpur,Maharashtra,21.1525,79.0752,WAQI/CPCB,true
+AMD_MANINAGAR,Maninagar Ahmedabad,Ahmedabad,Gujarat,23.0027,72.5973,WAQI/CPCB,true
+BHO_TT_NAGAR,T T Nagar Bhopal,Bhopal,Madhya Pradesh,23.2336,77.4006,WAQI/CPCB,true
+BLR_BTM,BTM Layout Bengaluru,Bengaluru,Karnataka,12.9166,77.6101,WAQI/CPCB,true
+HYD_SANATHNAGAR,Sanathnagar Hyderabad,Hyderabad,Telangana,17.4569,78.4439,WAQI/CPCB,true
+CHN_ALANDUR,Alandur Bus Depot Chennai,Chennai,Tamil Nadu,12.9975,80.2006,WAQI/CPCB,true
+VIZ_GVM_CORP,GVM Corporation Visakhapatnam,Visakhapatnam,Andhra Pradesh,17.7226,83.3013,WAQI/CPCB,true
+COK_VYTTILA,Vyttila Kochi,Kochi,Kerala,9.9679,76.3183,WAQI/CPCB,true
+KOL_VICTORIA,Victoria Memorial Kolkata,Kolkata,West Bengal,22.5448,88.3426,WAQI/CPCB,true
+BBI_LINGARAJ,Lingaraj Mandir Bhubaneswar,Bhubaneswar,Odisha,20.2382,85.8338,WAQI/CPCB,true
+GAU_RAILWAY_COLONY,Railway Colony Guwahati,Guwahati,Assam,26.1817,91.7806,WAQI/CPCB,true

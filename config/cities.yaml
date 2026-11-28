@@ -1,63 +1,40 @@
 cities:
-  - city_id: DEL
-    city_name: Delhi
-    state: Delhi
-    region: Delhi NCR
-    lat: 28.6139
-    lon: 77.2090
-    waqi_slug: delhi
-  - city_id: GGN
-    city_name: Gurugram
-    state: Haryana
-    region: Delhi NCR
-    lat: 28.4595
-    lon: 77.0266
-    waqi_slug: gurgaon
-  - city_id: NOI
-    city_name: Noida
-    state: Uttar Pradesh
-    region: Delhi NCR
-    lat: 28.5355
-    lon: 77.3910
-    waqi_slug: noida
-  - city_id: MUM
-    city_name: Mumbai
-    state: Maharashtra
-    region: West
-    lat: 19.0760
-    lon: 72.8777
-    waqi_slug: mumbai
-  - city_id: BLR
-    city_name: Bengaluru
-    state: Karnataka
-    region: South
-    lat: 12.9716
-    lon: 77.5946
-    waqi_slug: bangalore
-  - city_id: KOL
-    city_name: Kolkata
-    state: West Bengal
-    region: East
-    lat: 22.5726
-    lon: 88.3639
-    waqi_slug: kolkata
-  - city_id: HYD
-    city_name: Hyderabad
-    state: Telangana
-    region: South
-    lat: 17.3850
-    lon: 78.4867
-    waqi_slug: hyderabad
-  - city_id: CHN
-    city_name: Chennai
-    state: Tamil Nadu
-    region: South
-    lat: 13.0827
-    lon: 80.2707
-    waqi_slug: chennai
+  # --- Delhi NCR ---
+  - { city_id: DEL, city_name: Delhi, state: Delhi, region: Delhi NCR, lat: 28.6139, lon: 77.2090, waqi_slug: delhi, ncap_city: true }
+  - { city_id: GGN, city_name: Gurugram, state: Haryana, region: Delhi NCR, lat: 28.4595, lon: 77.0266, waqi_slug: gurugram, ncap_city: true }
+  - { city_id: NOI, city_name: Noida, state: Uttar Pradesh, region: Delhi NCR, lat: 28.5355, lon: 77.3910, waqi_slug: noida, ncap_city: true }
+  - { city_id: GZB, city_name: Ghaziabad, state: Uttar Pradesh, region: Delhi NCR, lat: 28.6692, lon: 77.4538, waqi_slug: ghaziabad, ncap_city: true }
+  - { city_id: FBD, city_name: Faridabad, state: Haryana, region: Delhi NCR, lat: 28.4089, lon: 77.3178, waqi_slug: faridabad, ncap_city: true }
+
+  # --- Indo-Gangetic Plain & North ---
+  - { city_id: LKO, city_name: Lucknow, state: Uttar Pradesh, region: North, lat: 26.8467, lon: 80.9462, waqi_slug: lucknow, ncap_city: true }
+  - { city_id: KNU, city_name: Kanpur, state: Uttar Pradesh, region: North, lat: 26.4499, lon: 80.3319, waqi_slug: kanpur, ncap_city: true }
+  - { city_id: VNS, city_name: Varanasi, state: Uttar Pradesh, region: North, lat: 25.3176, lon: 82.9739, waqi_slug: varanasi, ncap_city: true }
+  - { city_id: PAT, city_name: Patna, state: Bihar, region: East, lat: 25.5941, lon: 85.1376, waqi_slug: patna, ncap_city: true }
+  - { city_id: CHD, city_name: Chandigarh, state: Chandigarh, region: North, lat: 30.7333, lon: 76.7794, waqi_slug: chandigarh, ncap_city: true }
+  - { city_id: ASR, city_name: Amritsar, state: Punjab, region: North, lat: 31.6340, lon: 74.8723, waqi_slug: amritsar, ncap_city: true }
+  - { city_id: JAI, city_name: Jaipur, state: Rajasthan, region: North, lat: 26.9124, lon: 75.7873, waqi_slug: jaipur, ncap_city: true }
+
+  # --- West & Central ---
+  - { city_id: MUM, city_name: Mumbai, state: Maharashtra, region: West, lat: 19.0760, lon: 72.8777, waqi_slug: mumbai, ncap_city: true }
+  - { city_id: PUN, city_name: Pune, state: Maharashtra, region: West, lat: 18.5204, lon: 73.8567, waqi_slug: pune, ncap_city: true }
+  - { city_id: NGP, city_name: Nagpur, state: Maharashtra, region: Central, lat: 21.1458, lon: 79.0882, waqi_slug: nagpur, ncap_city: true }
+  - { city_id: AMD, city_name: Ahmedabad, state: Gujarat, region: West, lat: 23.0225, lon: 72.5714, waqi_slug: ahmedabad, ncap_city: true }
+  - { city_id: BHO, city_name: Bhopal, state: Madhya Pradesh, region: Central, lat: 23.2599, lon: 77.4126, waqi_slug: bhopal, ncap_city: true }
+
+  # --- South ---
+  - { city_id: BLR, city_name: Bengaluru, state: Karnataka, region: South, lat: 12.9716, lon: 77.5946, waqi_slug: bangalore, ncap_city: true }
+  - { city_id: HYD, city_name: Hyderabad, state: Telangana, region: South, lat: 17.3850, lon: 78.4867, waqi_slug: hyderabad, ncap_city: true }
+  - { city_id: CHN, city_name: Chennai, state: Tamil Nadu, region: South, lat: 13.0827, lon: 80.2707, waqi_slug: chennai, ncap_city: true }
+  - { city_id: VIZ, city_name: Visakhapatnam, state: Andhra Pradesh, region: South, lat: 17.6868, lon: 83.2185, waqi_slug: visakhapatnam, ncap_city: true }
+  - { city_id: COK, city_name: Kochi, state: Kerala, region: South, lat: 9.9312, lon: 76.2673, waqi_slug: kochi, ncap_city: false }
+
+  # --- East & Northeast ---
+  - { city_id: KOL, city_name: Kolkata, state: West Bengal, region: East, lat: 22.5726, lon: 88.3639, waqi_slug: kolkata, ncap_city: true }
+  - { city_id: BBI, city_name: Bhubaneswar, state: Odisha, region: East, lat: 20.2961, lon: 85.8245, waqi_slug: bhubaneswar, ncap_city: true }
+  - { city_id: GAU, city_name: Guwahati, state: Assam, region: Northeast, lat: 26.1445, lon: 91.7362, waqi_slug: guwahati, ncap_city: true }
 
 firms_region:
-  name: Punjab_Haryana_Stubble_Belt
-  # min_lon, min_lat, max_lon, max_lat
-  bbox: "73.8,27.6,77.6,32.5"
+  name: Indo_Gangetic_Crop_Fire_Belt
+  bbox: "73.8,25.0,86.0,32.5"
   high_confidence_only: true

@@ -11,6 +11,7 @@ from datetime import datetime, timezone, date, timedelta
 import yaml
 import requests
 import pandas as pd
+from urllib.parse import urlparse
 from dotenv import load_dotenv
 from databricks import sql
 
@@ -18,7 +19,8 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(me
 logger = logging.getLogger("sync_live_data")
 
 load_dotenv()
-HOST = os.getenv("DATABRICKS_SERVER_HOSTNAME", "dbc-f5e4acdd-3f34.cloud.databricks.com")
+raw_host = os.getenv("DATABRICKS_SERVER_HOSTNAME", "dbc-f5e4acdd-3f34.cloud.databricks.com")
+HOST = urlparse(raw_host).hostname if "://" in raw_host else raw_host.split("/")[0]
 HTTP_PATH = os.getenv("DATABRICKS_HTTP_PATH", "")
 TOKEN = os.getenv("DATABRICKS_TOKEN", "")
 
@@ -44,7 +46,6 @@ def sync():
 
     waqi_token = os.getenv("WAQI_API_TOKEN")
 
-    new_hourly_records = []
     new_daily_records = []
 
     now_utc = datetime.now(timezone.utc)
@@ -74,20 +75,6 @@ def sync():
                 dom_pol = data.get("dominentpol", "pm25").upper()
                 if dom_pol == "PM25":
                     dom_pol = "PM2.5"
-
-                # Hourly record for now
-                hour_ts = now_utc.replace(minute=0, second=0, microsecond=0)
-                new_hourly_records.append({
-                    "city": cname,
-                    "hour_ts": hour_ts.strftime("%Y-%m-%d %H:%M:%S"),
-                    "PM2.5": float(pm25),
-                    "PM10": float(pm10),
-                    "NO2": float(no2),
-                    "SO2": float(so2),
-                    "CO": float(co),
-                    "O3": float(o3),
-                    "ingested_at": now_utc.strftime("%Y-%m-%d %H:%M:%S"),
-                })
 
                 # Check if forecast has daily entries for Nov 21 and Nov 22
                 forecast_daily = data.get("forecast", {}).get("daily", {})
@@ -123,19 +110,7 @@ def sync():
     logger.info(f"Connecting to Databricks SQL Warehouse at {HOST}...")
     with sql.connect(server_hostname=HOST, http_path=HTTP_PATH, access_token=TOKEN) as conn:
         with conn.cursor() as cur:
-            # 1. Upsert into silver_city_hourly_aqi
-            logger.info(f"Upserting {len(new_hourly_records)} hourly records into airlens.silver.silver_city_hourly_aqi...")
-            for r in new_hourly_records:
-                cur.execute("""
-                    MERGE INTO airlens.silver.silver_city_hourly_aqi t
-                    USING (SELECT ? as city, CAST(? as TIMESTAMP) as hour_ts, ? as `PM2.5`, ? as PM10, ? as NO2, ? as SO2, ? as CO, ? as O3, current_timestamp() as ingested_at) s
-                    ON t.city = s.city AND t.hour_ts = s.hour_ts
-                    WHEN MATCHED THEN UPDATE SET t.`PM2.5` = s.`PM2.5`, t.PM10 = s.PM10, t.NO2 = s.NO2, t.SO2 = s.SO2, t.CO = s.CO, t.O3 = s.O3, t.ingested_at = s.ingested_at
-                    WHEN NOT MATCHED THEN INSERT (city, hour_ts, `PM2.5`, PM10, NO2, SO2, CO, O3, ingested_at)
-                    VALUES (s.city, s.hour_ts, s.`PM2.5`, s.PM10, s.NO2, s.SO2, s.CO, s.O3, s.ingested_at)
-                """, [r["city"], r["hour_ts"], r["PM2.5"], r["PM10"], r["NO2"], r["SO2"], r["CO"], r["O3"]])
-
-            # 2. Upsert into gold_city_daily_aqi
+            # 1. Upsert into gold_city_daily_aqi
             logger.info(f"Upserting {len(new_daily_records)} daily records into airlens.gold.gold_city_daily_aqi...")
             for r in new_daily_records:
                 # Query rolling 7d aqi for this city
